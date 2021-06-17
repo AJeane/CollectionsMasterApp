@@ -5,6 +5,8 @@ namespace CollectionsMasterConsoleUI
 {
     class Program
     {
+        private static object numbers;
+
         static void Main(string[] args)
         {
             //TODO: Follow the steps provided in the comments under each region.
@@ -101,34 +103,74 @@ namespace CollectionsMasterConsoleUI
 
         private static void ThreeKiller(int[] numbers)
         {
-            
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] % 3 == 0)
+                {
+                    numbers[i] = 0;
+                }
+            }
+
+
         }
 
         private static void OddKiller(List<int> numberList)
         {
-            
+            for(int i = 0; i < numberList.Count; i++)
+            {
+                if(numberList[i] % 2 != 0)
+                {
+                    numberList[i] = 0;
+                }
+            }
         }
 
         private static void NumberChecker(List<int> numberList, int searchNumber)
         {
-            
+            for(int i = 0; i <numberList.Count; i++)
+            {
+                if(numberList[i] == searchNumber)
+                {
+                    Console.WriteLine($"We found the number{searchNumber}");
+
+                }
+            }
+
+
         }
 
         private static void Populater(List<int> numberList)
         {
             Random rng = new Random();
+            for (int i = 0; i < 50; i++)
+            {
+                numbers.Add(rng.Next(1, 100));
+            }
 
         }
 
         private static void Populater(int[] numbers)
         {
             Random rng = new Random();
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = rng.Next(1, 100);
+            }
 
         }        
 
         private static void ReverseArray(int[] array)
         {
-            
+            for(int i = 0; i < array.Length / 2; i++)
+            {
+                int tmp = array[i];
+                array[i] = array[array.Length - i - 1];
+                array[array.Length - i - 1] = tmp;
+
+
+            }
+
+
         }
 
         /// <summary>
